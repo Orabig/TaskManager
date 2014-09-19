@@ -1,0 +1,11 @@
+To use this project from Eclipse add these symbolic links :
+
+on Windows 7 :
+mklink AndroidManifest.xml app\src\main\AndroidManifest.xml
+mklink /D res app\src\main\res
+mklink /D src app\src\main\java
+
+on Linux/Unix :
+ln -s app\src\main\AndroidManifest.xml AndroidManifest.xml
+ln -s app\src\main\res res
+ln -s app\src\main\java src
