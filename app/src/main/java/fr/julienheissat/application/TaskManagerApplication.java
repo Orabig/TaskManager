@@ -6,17 +6,23 @@ import android.database.sqlite.SQLiteDatabase;
 import com.google.android.gms.maps.model.LatLng;
 
 import fr.julienheissat.database.TaskSQLiteOpenHelper;
-import fr.julienheissat.model.TaskList;
+import fr.julienheissat.modelcontroller.LocationController;
+import fr.julienheissat.modelcontroller.TaskListController;
 
 /**
  * Created by juju on 15/09/2014.
  */
-public class TaskManagerApplication extends Application {
+public class TaskManagerApplication extends Application
+{
 
 
     private SQLiteDatabase database;
     private LatLng latLng;
-    private TaskList taskList;
+    private TaskListController taskListController;
+
+
+
+    private LocationController locationController;
 
     @Override
     public void onCreate()
@@ -24,14 +30,24 @@ public class TaskManagerApplication extends Application {
         super.onCreate();
         TaskSQLiteOpenHelper helper= new TaskSQLiteOpenHelper(this);
         database = helper.getWritableDatabase();
-        taskList = new TaskList(database);
+        taskListController = new TaskListController(database);
+        locationController = new LocationController(this);
 
     }
 
-    public TaskList getTaskList()
+
+    public LocationController getLocationController()
     {
-        return taskList;
+        return locationController;
     }
+
+
+    public TaskListController getTaskListController()
+    {
+        return taskListController;
+    }
+
+
 
 
 }

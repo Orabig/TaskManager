@@ -11,15 +11,18 @@ public class TaskSQLiteOpenHelper extends SQLiteOpenHelper
 {
 
     public static final String TASK_DB_SQLITE = "task_db.sqlite";
-    public static final int VERSION = 2;
+    public static final int VERSION = 1;
     public static final String TASK_TABLE = "tasks";
     public static final String TASK_ID = "id";
     public static final String TASK_NAME = "name";
     public static final String TASK_COMPLETE = "complete";
-
     public static final String TASK_ADDRESS = "address";
     public static final String TASK_LATITUDE = "latitude";
     public static final String TASK_LONGITUDE = "longitude";
+    public static final String TASK_PROJECT = "project";
+    public static final String TASK_PRIORITY = "priority";
+    public static final String TASK_DATE = "date";
+
 
 
     public TaskSQLiteOpenHelper(Context context)
@@ -38,9 +41,9 @@ public class TaskSQLiteOpenHelper extends SQLiteOpenHelper
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i2)
     {
-        db.execSQL("alter table "+ TASK_TABLE+" add column "+TASK_ADDRESS+" text");
-        db.execSQL("alter table "+ TASK_TABLE+" add column "+TASK_LATITUDE+" integer");
-        db.execSQL("alter table "+ TASK_TABLE+" add column "+TASK_LONGITUDE+" integer");
+//        db.execSQL("alter table "+ TASK_TABLE+" add column "+TASK_ADDRESS+" text");
+//        db.execSQL("alter table "+ TASK_TABLE+" add column "+TASK_LATITUDE+" integer");
+//        db.execSQL("alter table "+ TASK_TABLE+" add column "+TASK_LONGITUDE+" integer");
     }
 
     private void createTable(SQLiteDatabase db)
@@ -52,9 +55,14 @@ public class TaskSQLiteOpenHelper extends SQLiteOpenHelper
                     TASK_COMPLETE+" text, "+
                     TASK_ADDRESS+" text, "+
                     TASK_LATITUDE+" integer, "+
-                    TASK_LONGITUDE+" integer "+
+                    TASK_LONGITUDE+" integer, "+
+                    TASK_PROJECT+" text, "+
+                    TASK_PRIORITY+" text, "+
+                    TASK_DATE+" bigint "+
                     ");"
     );
+
+
 
     }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="green" parent="@style/_green"/>
+    <style name="_green" parent="Theme.AppCompat.Light">
+
+    <item name="android:editTextStyle">@style/EditTextgreen</item>
+
+    <item name="android:textColorHighlight">#998adcb3</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewgreen</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxgreen</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtongreen</item>
+
+    <item name="android:buttonStyle">@style/Buttongreen</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtongreen</item>
+
+    <item name="android:spinnerStyle">@style/Spinnergreen</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemgreen</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBargreen</item>
+
+    <item name="android:seekBarStyle">@style/SeekBargreen</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBargreen</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBiggreen</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallgreen</item>
+
+    <item name="android:buttonStyleToggle">@style/Togglegreen</item>
+
+    <item name="android:listViewStyle">@style/ListViewgreen</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewgreen.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemgreen</item>
+        
+        <item name="actionBarItemBackground">@drawable/selectable_background_green</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Green</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Green</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Green</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Green</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Green</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_green</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_green</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Green</item>
+
+    </style>
+
+</resources>

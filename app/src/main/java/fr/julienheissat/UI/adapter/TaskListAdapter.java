@@ -1,63 +1,66 @@
 package fr.julienheissat.ui.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-
-import fr.julienheissat.model.TaskList;
+import fr.julienheissat.modelcontroller.TaskListController;
 import fr.julienheissat.taskmanager.R;
 import fr.julienheissat.ui.views.TaskListItem;
 
 /**
  * Created by juju on 15/09/2014.
  */
-public class TaskListAdapter extends BaseAdapter implements TaskList.IModelListener
+public class TaskListAdapter extends BaseAdapter implements TaskListController.TaskListControllerListener
 {
-
-    private TaskList tasks;
+    private TaskListController tasks;
     private Context context;
+    private boolean useList = true;
+    private LayoutInflater mInflater;
 
-    //Constructor
 
-    public TaskListAdapter(TaskList tasks, Context context)
+    public TaskListAdapter(TaskListController tasks, Context context)
     {
         this.tasks = tasks;
         this.tasks.register(this);
         this.context = context;
     }
 
-    public void forceReload() {
-
-        notifyDataSetChanged();
-    }
-
-
-    //Tasklist listener overriding method
-
-    @Override
-    public void modelChanged(TaskList taskList)
+    /**
+     * * @param position * @param convertView * @param parent * @return
+     */
+    public View getView(int position, View convertView, ViewGroup parent)
     {
-        notifyDataSetChanged();
-    }
-
-
-
-    //List Adapter overriding method
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
         TaskListItem tli;
 
-        if (null == view) {
-            tli = (TaskListItem) View.inflate(context, R.layout.task_list_item, null);
-        } else {
-            tli = (TaskListItem) view;
+        if (mInflater==null)
+        {
+
+         mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         }
 
-        tli.setTask(tasks.get(i));
+        if (convertView == null)
+        {
+            if (useList)
+            {
+                tli = (TaskListItem) mInflater.inflate(R.layout.view_task_list_item, null);
+
+            } else
+
+            {
+                tli = (TaskListItem) mInflater.inflate(R.layout.view_task_grid_item, null);
+            }
+
+        } else
+        {
+            tli = (TaskListItem) convertView;
+        }
+        tli.setTask(tasks.get(position));
         return tli;
     }
+
 
     @Override
     public int getCount() {
@@ -74,6 +77,16 @@ public class TaskListAdapter extends BaseAdapter implements TaskList.IModelListe
         return i;
     }
 
+    public void forceReload()
+    {
 
+        notifyDataSetChanged();
+    }
+
+
+    @Override
+    public void taskListChanged(TaskListController taskList)
+    {
+        notifyDataSetChanged();
+    }
 }
-

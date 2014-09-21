@@ -1,0 +1,62 @@
+<fr.julienheissat.ui.views.TaskListItem
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_row_selector"
+    android:padding="8dp" >
+
+    <!--Priority-->
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/task_priority_image_size"
+        android:layout_height="@dimen/task_priority_image_size"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="16dp" />
+
+    <!--Task name-->
+    <CheckedTextView
+    android:id="@+id/list_title"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@+id/list_image"
+    android:layout_toRightOf="@+id/list_image"
+    android:textSize="@dimen/dim_title"
+    android:textStyle="bold"
+    android:gravity="center_vertical"
+    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+    />
+
+    <!--<TextView-->
+        <!--android:paddingLeft="@dimen/task_horizontal_margin"-->
+        <!--android:paddingRight="@dimen/task_horizontal_margin"-->
+        <!--android:id="@+id/address_text_list"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:visibility="gone" />-->
+
+    <!--Project-->
+    <TextView
+        android:id="@+id/list_project"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_title"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/list_image"
+        android:textColor="@color/color_list_project"
+        android:textSize="@dimen/dim_project"
+        android:textStyle="bold" />
+
+    <!-- Creation Date -->
+    <TextView
+        android:id="@+id/list_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/color_list_project"
+        android:textSize="@dimen/dim_date" />
+
+
+
+</fr.julienheissat.ui.views.TaskListItem>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fr.julienheissat.ui.fragment.MapShowFragment">
+
+    <ProgressBar
+        android:id="@+id/address_progress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address_progress"
+        android:textIsSelectable="true"/>
+
+    <fragment
+        android:id="@+id/fragment_map_fragment_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/address_progress"
+        android:layout_alignParentLeft="true"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+</FrameLayout>

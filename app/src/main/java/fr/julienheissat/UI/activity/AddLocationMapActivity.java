@@ -1,14 +1,11 @@
 package fr.julienheissat.ui.activity;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,13 +42,13 @@ public class AddLocationMapActivity extends Activity
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_add_location_map);
 
-
-
             setupViews();
         }
 
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+
+
+
     private void setupViews()
     {
 

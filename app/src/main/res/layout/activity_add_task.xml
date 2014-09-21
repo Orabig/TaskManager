@@ -15,11 +15,30 @@
         android:layout_height="wrap_content"
         android:text="@string/add_task" />
 
-
     <EditText
         android:id="@+id/task_name"
         android:layout_width="fill_parent"
+        android:spinnerMode="dialog"
         android:layout_height="wrap_content" />
+
+    <Spinner
+
+        android:id="@+id/project_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:prompt="@string/project"/>
+
+
+    <Spinner
+
+        android:id="@+id/priority_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/priority"/>
+
+
+
 
     <TextView
         android:id="@+id/address_text"
